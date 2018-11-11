@@ -1,6 +1,5 @@
 <template>
-  <div>
-    <section />
+  <div class="articles-page">
     <ArticlesList />
   </div>
 </template>

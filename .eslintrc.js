@@ -7,7 +7,7 @@ module.exports = {
   parserOptions: {
     parser: 'babel-eslint'
   },
-  extends: ['plugin:vue/recommended', 'plugin:prettier/recommended'],
+  extends: ["plugin:prettier/recommended", "plugin:vue/recommended"],
   // required to lint *.vue files
   plugins: ['vue', 'prettier'],
   // add your custom rules here
@@ -19,9 +19,9 @@ module.exports = {
     'vue/max-attributes-per-line': [
       2,
       {
-        singleline: 4,
+        singleline: 2,
         multiline: {
-          max: 1,
+          max: 10,
           allowFirstLine: true
         }
       }

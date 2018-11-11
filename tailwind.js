@@ -227,7 +227,11 @@ module.exports = {
       'Liberation Mono',
       'Courier New',
       'monospace',
-    ]
+    ],
+    'html': [
+      'Playfair Display',
+      'serif'
+    ],
   },
 
 

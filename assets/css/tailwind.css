@@ -47,6 +47,80 @@
  * @import "tailwindcss/utilities";
  */
 
+/* base page styles */
+
+html {
+  font-family: @apply font-html;
+}
+
+body {
+  margin: 0;
+  max-width: 100vw;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 1) 0%,
+    rgba(241, 241, 241, 1) 73%,
+    rgba(225, 225, 225, 1) 100%,
+    rgba(246, 246, 246, 1) 100%,
+    rgba(225, 225, 225, 1) 101%
+  );
+  height: 100%;
+  min-height: 100vh;
+}
+
+.container {
+  @apply ml-10 mr-10 flex justify-center text-center items-center min-h-full;
+  margin: 0 auto;
+}
+
+/* button styles */
+
+.btn-main {
+  @apply bg-white text-grey-darkest font-semibold py-2 px-4 border border-grey-dark rounded shadow outline-none;
+}
+
+.btn-main--big {
+  @apply btn-main py-3 px-6;
+}
+
+.btn-main:hover {
+  @apply bg-grey-lightest border-purple-darker;
+}
+
+.btn-main:focus {
+  @apply outline-none border-purple-darkest;
+}
+
+/* navigation link styles */
+
+.nav-link {
+  @apply block mt-4 text-white;
+}
+
+.nav-link:hover {
+  @apply text-white;
+}
+
+.nav-link-a:visited {
+  @apply text-white;
+}
+
+@screen lg {
+  .nav-link {
+    @apply inline-block mt-0;
+  }
+}
+
+/* input styles */
+
+.input-text {
+  @apply bg-grey-lighter appearance-none border-2 border-grey-lighter rounded w-full py-2 px-4 text-grey-darker leading-tight;
+}
+.input-text:focus {
+  @apply outline-none bg-white border-purple;
+}
+
+
 @tailwind utilities;
 
 /**
@@ -63,3 +137,17 @@
  * @import "utilities/background-patterns";
  * @import "utilities/skew-transforms";
  */
+
+ /* custom utility classes:  */
+.outline-none:focus {
+  outline: 0!Important;
+}
+
+@responsive {
+  .border-box {
+    box-sizing: border-box;
+  }
+  .content-box {
+    box-sizing: content-box;
+  }
+}
