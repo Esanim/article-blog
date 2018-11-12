@@ -4,11 +4,15 @@
 
     <AppControlInput v-model="editedArticle.title">Title</AppControlInput>
 
-    <AppControlInput v-model="editedArticle.thumbnailLink">Thumbnail Link</AppControlInput>
+    <AppControlInput v-model="editedArticle.thumbnail">Thumbnail Link</AppControlInput>
 
     <AppControlInput
       v-model="editedArticle.content"
       control-type="textarea">Content</AppControlInput>
+
+    <AppControlInput
+      v-model="editedArticle.previewText"
+      control-type="textarea">Preview</AppControlInput>
 
     <AppButton class="float-right" type="submit">Save</AppButton>
 
@@ -36,6 +40,7 @@ export default {
     }
   },
   data() {
+    console.log(this.article)
     return {
       editedArticle: this.article
         ? {...this.article}
@@ -43,12 +48,15 @@ export default {
             author: '',
             title: '',
             thumbnail: '',
-            content: ''
+            content: '',
+            previewText: ''
           }
     }
   },
   methods: {
-    onSave() {},
+    onSave() {
+      this.$emit('submit', this.editedArticle)
+    },
     onCancel() {
       this.$router.push('/admin')
     }

@@ -1,35 +1,13 @@
 <template>
   <section class="lg:flex lg:flex-wrap lg:justify-around">
-    <ArticlePreview id="1"
+    <ArticlePreview v-for="article in articles"
+                    :key="article.id"
+                    :id="article.id"
                     :is-admin="isAdmin"
-                    class="block mb-8"
-                    thumbnail="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/beautiful-scenery-the-red-flowers-arun-sivaprasad.jpg"
-                    title="First article!"
-                    preview-text="this is the first artciel" />
-    <ArticlePreview id="2"
-                    :is-admin="isAdmin"
-                    class="block mb-8"
-                    thumbnail="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/beautiful-scenery-the-red-flowers-arun-sivaprasad.jpg"
-                    title="Second article!"
-                    preview-text="this is the second artciel" />
-    <ArticlePreview id="3"
-                    :is-admin="isAdmin"
-                    class="block mb-8"
-                    thumbnail="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/beautiful-scenery-the-red-flowers-arun-sivaprasad.jpg"
-                    title="Third artiFcle!"
-                    preview-text="this is the third artciel111111111111111111" />
-    <ArticlePreview id="4"
-                    :is-admin="isAdmin"
-                    class="block mb-8"
-                    thumbnail="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/beautiful-scenery-the-red-flowers-arun-sivaprasad.jpg"
-                    title="Fourth article!"
-                    preview-text="this is the fourth artciel" />
-    <ArticlePreview id="5"
-                    :is-admin="isAdmin"
-                    class="block mb-8"
-                    thumbnail="https://images.fineartamerica.com/images/artworkimages/mediumlarge/1/beautiful-scenery-the-red-flowers-arun-sivaprasad.jpg"
-                    title="Fifth article!"
-                    preview-text="this is the fifth artciel" />
+                    :thumbnail="article.thumbnail"
+                    :title="article.title"
+                    :preview-text="article.previewText"
+                    class="block mb-8" />
   </section>
 </template>
 
@@ -43,6 +21,10 @@ export default {
     isAdmin: {
       type: Boolean,
       default: false
+    },
+    articles: {
+      type: Array,
+      required: true
     }
   }
 }

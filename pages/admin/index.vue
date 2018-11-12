@@ -5,7 +5,7 @@
     </section>
     <section class="clearfix">
       <h1 class="text-2xl lg:text-3xl pb-4 text-purple">Existing articles</h1>
-      <ArticleList is-admin />
+      <ArticleList :articles="loadedArticles" is-admin />
     </section>
   </div>
 </template>
@@ -18,6 +18,11 @@ export default {
   components: {
     ArticleList,
     AppButton
+  },
+  computed: {
+    loadedArticles() {
+      return this.$store.getters.loadedArticles
+    }
   }
 }
 </script>
