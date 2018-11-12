@@ -8,17 +8,14 @@
 
 <script>
 import AdminArticleForm from '@/components/Admin/AdminArticleForm'
-import axios from 'axios'
 export default {
   layout: 'admin',
   components: {
     AdminArticleForm
   },
   async asyncData(context) {
-    let {data} = await axios.get(
-      'https://nuxt-blog-a71f9.firebaseio.com/articles/' +
-        context.params.articleId +
-        '.json'
+    let {data} = await context.app.$axios.$get(
+      process.env.baseUrl + '/articles/' + context.params.articleId + '.json'
     )
     return {loadedArticle: {...data, id: context.params.articleId}}
   },

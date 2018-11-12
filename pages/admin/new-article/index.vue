@@ -8,7 +8,6 @@
 
 <script>
 import AdminArticleForm from '@/components/Admin/AdminArticleForm'
-import axios from 'axios'
 export default {
   layout: 'admin',
   components: {

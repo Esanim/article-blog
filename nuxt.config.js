@@ -25,17 +25,17 @@ module.exports = {
   /*
   ** Customize the progress-bar color
   */
-  loading: {color: '#fff'},
+  loading: {color: '#fff', height: '3px'},
 
   /*
   ** Global CSS
   */
-  css: ['~/assets/css/tailwind.css'],
+  css: ['~/assets/css/tailwind.css', '~/assets/css/styles.css'],
 
   /*
   ** Plugins to load before mounting the App
   */
-  plugins: [],
+  plugins: ['~plugins/core-components.js', '~plugins/date-filter.js'],
 
   /*
   ** Nuxt.js modules
@@ -49,6 +49,7 @@ module.exports = {
   */
   axios: {
     // See https://github.com/nuxt-community/axios-module#options
+    baseURL: process.env.BASE_URL || 'https://nuxt-blog-a71f9.firebaseio.com'
   },
 
   /*
@@ -69,5 +70,13 @@ module.exports = {
         })
       }
     }
+  },
+  env: {
+    baseUrl: 'https://nuxt-blog-a71f9.firebaseio.com'
+  },
+  router: {linkActiveClass: 'active'},
+  transition: {
+    name: 'fade',
+    mode: 'out-in'
   }
 }
