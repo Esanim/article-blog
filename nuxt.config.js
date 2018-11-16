@@ -42,7 +42,8 @@ module.exports = {
   */
   modules: [
     // Doc: https://github.com/nuxt-community/axios-module#usage
-    '@nuxtjs/axios'
+    '@nuxtjs/axios',
+    '@nuxtjs/pwa'
   ],
   /*
   ** Axios module configuration
@@ -78,5 +79,33 @@ module.exports = {
   transition: {
     name: 'fade',
     mode: 'out-in'
-  }
+  },
+  manifest: {
+    name: 'My blog',
+    short_name: 'Mblog',
+    lang: 'en',
+    display: 'fullscreen',
+    orientation: 'portrait',
+    background_color: 'black',
+    theme_color: '#ccc',
+    icons: [
+      {
+        src: '~/static/icon.png',
+        type: 'image/png'
+      }
+    ]
+  },
+  workbox: {
+    importScripts: ['custom-sw.js']
+  },
+  runtimeCaching: [
+    {
+      // Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
+      urlPattern: 'https://fonts.googleapis.com/css?family=Playfair+Display',
+      // Defaults to `networkFirst` if omitted
+      handler: 'cacheFirst',
+      // Defaults to `GET` if omitted
+      method: 'GET'
+    }
+  ]
 }

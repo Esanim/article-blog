@@ -79,3 +79,6 @@ dist
 
 # IDE
 .idea
+
+# nuxt pwe module
+.sw
