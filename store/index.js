@@ -95,10 +95,16 @@ const createStore = () => {
             localStorage.setItem('token', result.idToken)
             localStorage.setItem(
               'tokenExpirationDate',
-              +result.expiresIn * 1000
+              new Date().getTime() + +result.expiresIn * 1000
             )
             Cookie.set('jwt', result.idToken)
-            Cookie.set('expirationDate', +result.expiresIn * 1000)
+            Cookie.set(
+              'expirationDate',
+              new Date().getTime() + +result.expiresIn * 1000
+            )
+            return this.$axios.$post(process.env.capi, {
+              data: 'Authenticated!'
+            })
           })
           .catch(e => console.log(e))
       },

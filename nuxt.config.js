@@ -1,4 +1,5 @@
 const pkg = require('./package')
+const bodyParser = require('body-parser')
 
 module.exports = {
   mode: 'universal',
@@ -74,7 +75,8 @@ module.exports = {
   },
   env: {
     baseUrl: 'https://nuxt-blog-a71f9.firebaseio.com',
-    fbAPIKey: 'AIzaSyB6vGOaLv5RMWoDshfNlOE4qGoYTx_qPzc'
+    fbAPIKey: 'AIzaSyB6vGOaLv5RMWoDshfNlOE4qGoYTx_qPzc',
+    capi: 'http://localhost:3000/api/track-data'
   },
   router: {linkActiveClass: 'active'},
   transition: {
@@ -104,5 +106,6 @@ module.exports = {
         method: 'GET'
       }
     ]
-  }
+  },
+  serverMiddleware: [bodyParser.json(), '~/api']
 }
