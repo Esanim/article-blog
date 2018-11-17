@@ -10,11 +10,12 @@
 import AdminArticleForm from '@/components/Admin/AdminArticleForm'
 export default {
   layout: 'admin',
+  middleware: ['check-auth', 'auth'],
   components: {
     AdminArticleForm
   },
   async asyncData(context) {
-    let {data} = await context.app.$axios.$get(
+    let data = await context.app.$axios.$get(
       process.env.baseUrl + '/articles/' + context.params.articleId + '.json'
     )
     return {loadedArticle: {...data, id: context.params.articleId}}

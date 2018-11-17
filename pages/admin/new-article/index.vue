@@ -10,6 +10,7 @@
 import AdminArticleForm from '@/components/Admin/AdminArticleForm'
 export default {
   layout: 'admin',
+  middleware: ['check-auth', 'auth'],
   components: {
     AdminArticleForm
   },

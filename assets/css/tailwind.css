@@ -143,6 +143,10 @@ body {
   outline: 0!Important;
 }
 
+.clear {
+  clear: both;
+}
+
 @responsive {
   .border-box {
     box-sizing: border-box;

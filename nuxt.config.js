@@ -73,7 +73,8 @@ module.exports = {
     }
   },
   env: {
-    baseUrl: 'https://nuxt-blog-a71f9.firebaseio.com'
+    baseUrl: 'https://nuxt-blog-a71f9.firebaseio.com',
+    fbAPIKey: 'AIzaSyB6vGOaLv5RMWoDshfNlOE4qGoYTx_qPzc'
   },
   router: {linkActiveClass: 'active'},
   transition: {
@@ -87,25 +88,21 @@ module.exports = {
     display: 'fullscreen',
     orientation: 'portrait',
     background_color: 'black',
-    theme_color: '#ccc',
-    icons: [
-      {
-        src: '~/static/icon.png',
-        type: 'image/png'
-      }
-    ]
+    theme_color: '#ccc'
+  },
+  icon: {
+    src: 'icon.png'
   },
   workbox: {
-    importScripts: ['custom-sw.js']
-  },
-  runtimeCaching: [
-    {
-      // Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
-      urlPattern: 'https://fonts.googleapis.com/css?family=Playfair+Display',
-      // Defaults to `networkFirst` if omitted
-      handler: 'cacheFirst',
-      // Defaults to `GET` if omitted
-      method: 'GET'
-    }
-  ]
+    runtimeCaching: [
+      {
+        // Should be a regex string. Compiles into new RegExp('https://my-cdn.com/.*')
+        urlPattern: 'https://fonts.googleapis.com/css?family=Playfair+Display',
+        // Defaults to `networkFirst` if omitted
+        handler: 'cacheFirst',
+        // Defaults to `GET` if omitted
+        method: 'GET'
+      }
+    ]
+  }
 }
