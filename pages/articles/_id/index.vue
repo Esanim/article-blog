@@ -17,6 +17,12 @@
 <script>
 export default {
   async asyncData(context) {
+    if (context.payload) {
+      // only when static generated
+      return {
+        loadedArticle: context.payload.articleData
+      }
+    }
     const data = await context.app.$axios.$get(
       process.env.baseUrl + '/articles/' + context.params.id + '.json'
     )
