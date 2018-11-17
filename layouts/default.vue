@@ -29,13 +29,17 @@ export default {
   },
   methods: {
     handleScroll() {
+      const header = document.getElementsByClassName('theheader')[0]
+      if (header === undefined) {
+        return
+      }
       if (
         document.body.scrollTop > 80 ||
         document.documentElement.scrollTop > 80
       ) {
-        document.getElementsByClassName('theheader')[0].style.height = '4rem'
+        header.style.height = '4rem'
       } else {
-        document.getElementsByClassName('theheader')[0].style.height = '8rem'
+        header.style.height = '8rem'
       }
     },
     throttle(func, ms) {
