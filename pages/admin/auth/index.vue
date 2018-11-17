@@ -1,6 +1,6 @@
 <template>
-  <div class="admin-auth-page">
-    <div class="auth-container">
+  <div>
+    <div>
       <form @submit.prevent="onSubmit">
         <AppControlInput v-model="email" type="email">E-Mail Address</AppControlInput>
         <AppControlInput v-model="password" type="password">Password</AppControlInput>

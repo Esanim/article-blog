@@ -1,15 +1,15 @@
 <template>
-  <div class="single-article-page">
-    <section class="article">
-      <h1 class="article-title">{{ loadedArticle.title }}</h1>
-      <div class="post-details">
-        <div class="post-detail">Last updated on {{ loadedArticle.updatedDate | date }}</div>
-        <div class="post-detail">Written by {{ loadedArticle.author }}</div>
+  <div class="bg-white border-purple-lightest border-2 p-6">
+    <section>
+      <h1 class="text-3xl opacity-75 text-purple-dark">{{ loadedArticle.title }}</h1>
+      <div class="flex flex-col md:flex-row justify-between pt-2 pb-10 text-sm text-grey-darker">
+        <div>Last updated on {{ loadedArticle.updatedDate | date }}</div>
+        <div class="leading-loose md:leading-none">Written by {{ loadedArticle.author }}</div>
       </div>
-      <p class="post-content">{{ loadedArticle.content }}</p>
+      <p class="px-2">{{ loadedArticle.content }}</p>
     </section>
-    <section class="article-feedback">
-      <p>Let me know what you think about the article, send a mail to <a href="meme@meme" /> meme </p>
+    <section class="mt-6 text-sm text-grey-darker">
+      <p>Let me know what you think about the article, send a mail to <a href="test@test" /> test@test </p>
     </section>
   </div>
 </template>
