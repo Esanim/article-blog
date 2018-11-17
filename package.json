@@ -1,7 +1,7 @@
 {
-  "name": "custom-nuxt",
+  "name": "article-blog",
   "version": "1.0.0",
-  "description": "My grand Nuxt.js project",
+  "description": "article blog using nuxt",
   "author": "Esanim",
   "private": true,
   "scripts": {
