@@ -1,6 +1,12 @@
-# custom-nuxt 3.0
+# article blog using nuxt
+- firebase authentication
+- tailwind css
+- pwa support
+- support for express server 
+- support for static generation
 
-## Template for nuxt 3.0 with tailwind and postcss.
+## Uses template for nuxt 3.0 with tailwind and postcss.
+### https://github.com/Esanim/custom-nuxt-3.0
 
 > PostCSS plugins: Auoprefixer, PostCSS Preset Env
 
